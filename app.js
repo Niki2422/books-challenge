@@ -14,7 +14,7 @@ app.get('/producto', (req, res) => {
 
 // Ruta explícita para la raíz "/"
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/index.html'));
+  res.render(path.join(__dirname, './views/books/index.ejs'));
 });
 
 
