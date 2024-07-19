@@ -11,9 +11,20 @@
 <body>
     <%- include('../partials/header') %>
     <main>
-        <h2>Listado de Libros</h2>
-        <ul id="books-list">
-          <!-- Aquí se insertarán los libros dinámicamente -->
+        <h1>Listado de Libros</h1>
+        <ul>
+            <% books.forEach(book => { %>
+                <li>
+                    <h2><%= book.Title %></h2>
+                    <img src="<%= book.Cover %>" alt="<%= book.Title %>">
+                    <p><%= book.Description %></p>
+                    <p>Autor(es):
+                        <% book.Authors.forEach(author => { %>
+                            <%= author.Name %> 
+                        <% }) %>
+                    </p>
+                </li>
+            <% }) %>
         </ul>
     </main>
 
