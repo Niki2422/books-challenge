@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/header.css">
+    <title>books</title>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <h1>Listado de Libros</h1>
+        <ul>
+            <% books.forEach(book => { %>
+                <li>
+                    <h2><%= book.Title %></h2>
+                    <img src="<%= book.Cover %>" alt="<%= book.Title %>">
+                    <p><%= book.Description %></p>
+                    <p>Autor(es):
+                        <% book.Authors.forEach(author => { %>
+                            <%= author.Name %> 
+                        <% }) %>
+                    </p>
+                </li>
+            <% }) %>
+        </ul>
+    </main>
+
+    <%- include('../partials/footer')  %>
+
+
+      
+</body>
+
+
+
+</html>
